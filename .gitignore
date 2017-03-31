@@ -1,1 +1,10 @@
 node_modules
+
+# 日志
+npm-debug.log
+log/
+!log/.keep
+
+# 编译结果
+build
+
