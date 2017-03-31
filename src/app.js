@@ -1,23 +1,29 @@
 "use strict"
 import readlineSync from "readline-sync";
 import HangMan from "./models/hangman";
-
 import logger from "./libs/logger"
 
-
-console.log('Game start ~');
-
-let userName = readlineSync.question('May I have your name? ');
-
+console.log('游戏开始');
 let hangman = new HangMan();
 
-try {
-  hangman.guess('adasd');
-} catch (e) {
-  console.log(e.type);
-  console.log(e.message);
-  console.log(e.chineseMsg);
-  console.log(e.stack);
+while(hangman.hp > 0) {
+  try {
+    console.log(`你还有${hangman.hp}次机会`);
+    let letter = readlineSync.question('请猜一个字母: ');
+    hangman.guess(letter.toLowerCase());
+    console.log(`单词：${hangman.word} `);
+    if (hangman.isWin) {
+      logger.info('user win');
+      console.log('你赢了!');
+    } else if (!hangman.isAlive) {
+      console.log(`你输了= =, 答案是${hangman.protoWord}`);
+    }
+  } catch (e) {
+    if (e.type === "HangManError") {
+      console.log(e.chineseMsg);
+    } else {
+      throw e;
+    }
+  }
 }
-
-console.log(`Hi ${userName}~`);
+console.log("游戏结束");

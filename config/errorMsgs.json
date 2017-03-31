@@ -1,5 +1,5 @@
 {
   "input.guessed.letter": "这个字母已经猜过了。",
-  "input.multi.letters": "一次只能猜一个字母。"
+  "input.multi.letters": "一次只能猜一个字母。",
   "input.nothing": "必须猜一个字母"
 }
