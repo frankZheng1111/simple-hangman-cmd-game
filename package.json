@@ -1,0 +1,26 @@
+{
+  "name": "simple-hangman-cmd-game",
+  "version": "1.0.0",
+  "description": "simple hangman game",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankZheng1111/simple-hangman-cmd-game.git"
+  },
+  "author": "frank.zheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankZheng1111/simple-hangman-cmd-game/issues"
+  },
+  "homepage": "https://github.com/frankZheng1111/simple-hangman-cmd-game#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "nodemon": "^1.11.0"
+  }
+}
