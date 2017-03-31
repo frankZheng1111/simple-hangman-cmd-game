@@ -13,11 +13,11 @@ while(hangman.hp > 0) {
     hangman.guess(letter.toLowerCase());
     console.log(`单词：${hangman.word} `);
     if (hangman.isWin()) {
-      logger.debug('user win');
+      logger.info('user win');
       console.log('你赢了!');
       break;
     } else if (!hangman.isAlive()) {
-      logger.debug('user lose');
+      logger.info('user lose');
       console.log(`你输了= =, 答案是${hangman.protoWord}`);
     }
   } catch (e) {

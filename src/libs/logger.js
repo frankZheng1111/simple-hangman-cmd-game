@@ -5,7 +5,7 @@ log4js.configure({
   appenders: [
     {
       type: "logLevelFilter",
-      level: "INFO",
+      level: "WARN",
       appender: {
         type: "console",
       }

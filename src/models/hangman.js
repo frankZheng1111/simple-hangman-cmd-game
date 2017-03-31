@@ -9,7 +9,7 @@ class HangMan {
     this.wordLetters = this.protoWord.split("");
     this.guessedLetters = [];
     this.hp = 10;
-    logger.debug(`Generate a word: ${this.protoWord}`)
+    logger.info(`Generate a word: ${this.protoWord}`)
  
   }
 
@@ -18,8 +18,8 @@ class HangMan {
     if (letter.length > 1) { throw new HangManError("input.multi.letters"); }
     if (letter.length < 1) { throw new HangManError("input.nothing"); }
     if (this.guessedLetters.includes(letter)) { throw new HangManError("input.guessed.letter"); }
-    logger.debug(`User guess letter ${letter.toLowerCase()}`)
-    logger.debug(`Current Hp ${this.hp}`)
+    logger.info(`User guess letter ${letter.toLowerCase()}`)
+    logger.info(`Current Hp ${this.hp}`)
     this.guessedLetters.push(letter);
     if (!this.wordLetters.includes(letter)) { this.hp--; }
     this.word = this.wordLetters.map((letter) => {
