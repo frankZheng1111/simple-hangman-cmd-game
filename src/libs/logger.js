@@ -15,7 +15,7 @@ log4js.configure({
       level: "DEBUG",
       appender: {
         type: "dateFile", //文件输出
-        filename: "../../../log/hangman",
+        filename: "log/hangman",
         alwaysIncludePattern: true,
         pattern: "-yyyy-MM-dd.log",
         category: "normal"
@@ -26,4 +26,5 @@ log4js.configure({
 });
 
 let logger = log4js.getLogger("normal");
+
 export default logger;
