@@ -1,5 +1,5 @@
 "use strict"
-import { HangManError } from '../libs/error';
+import { HangManError } from '../errors';
 
 class HangMan {
   constructor() {

@@ -14,9 +14,10 @@ let hangman = new HangMan();
 try {
   hangman.guess('adasd');
 } catch (e) {
-  console.log(e.name);
+  console.log(e.type);
   console.log(e.message);
   console.log(e.chineseMsg);
+  console.log(e.stack);
 }
 
 console.log(`Hi ${userName}~`);
