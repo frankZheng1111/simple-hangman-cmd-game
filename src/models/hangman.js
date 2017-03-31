@@ -1,10 +1,12 @@
 "use strict"
+import fs from 'fs'
 import { HangManError } from '../errors';
 import logger from "../libs/logger"
 
 class HangMan {
   constructor() {
-    this.protoWord = "laevatein".toLowerCase();
+    let dictionary = fs.readFileSync('dictionary.txt').toString().split('\n');
+    this.protoWord = dictionary[Math.floor(Math.random() * dictionary.length)].toLowerCase();
     this.word = this.protoWord.replace(/[a-z]/g, '*');
     this.wordLetters = this.protoWord.split("");
     this.guessedLetters = [];
