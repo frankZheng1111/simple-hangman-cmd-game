@@ -1,9 +1,22 @@
 "use strict"
 import readlineSync from "readline-sync";
+import HangMan from "./models/hangman";
 
-import logger from "./lib/logger"
+import logger from "./libs/logger"
+
+
+console.log('Game start ~');
 
 let userName = readlineSync.question('May I have your name? ');
 
-console.log('Game start ~');
+let hangman = new HangMan();
+
+try {
+  hangman.guess('adasd');
+} catch (e) {
+  console.log(e.name);
+  console.log(e.message);
+  console.log(e.chineseMsg);
+}
+
 console.log(`Hi ${userName}~`);
