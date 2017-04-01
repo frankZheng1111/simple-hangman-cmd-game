@@ -2,6 +2,7 @@
 import fs from "fs"
 import { HangManError } from "../errors";
 import logger from "../libs/logger"
+import config from "../libs/config"
 
 class HangMan {
   constructor(customProtoWord) {
@@ -11,7 +12,7 @@ class HangMan {
     this.word = this.protoWord.replace(/[a-z]/g, "*");
     this.wordLetters = this.protoWord.split("");
     this.guessedLetters = [];
-    this.hp = 10;
+    this.hp = config.base.hp;
     logger.info(`Generate a word: ${this.protoWord}`)
  
   }
