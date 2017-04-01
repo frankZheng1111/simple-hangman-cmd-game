@@ -26,13 +26,7 @@ class HangMan {
     logger.info(`Current Hp ${this.hp}`)
     this.guessedLetters.push(letter);
     if (!this.wordLetters.includes(letter)) { this.hp--; }
-    this.word = this.wordLetters.map((letter) => {
-      if (this.guessedLetters.includes(letter)) {
-        return letter;
-      } else {
-        return "*";
-      }
-    }).join("");
+    this.word = this.protoWord.replace(new RegExp(`[^${this.guessedLetters.join('')}]`, 'g'), "*")
     return this.word;
   }
 
