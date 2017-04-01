@@ -14,7 +14,7 @@ class ExtendableError extends Error {
 class HangManError extends ExtendableError {
   constructor(m) {
     super(m);
-    this.type = 'HangManError';
+    this.type = "HangManError";
   }
 }
 export { HangManError }

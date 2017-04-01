@@ -1,14 +1,14 @@
 "use strict"
-import fs from 'fs'
-import { HangManError } from '../errors';
+import fs from "fs"
+import { HangManError } from "../errors";
 import logger from "../libs/logger"
 
 class HangMan {
   constructor(customProtoWord) {
     let _dictionary = [];
-    if (!customProtoWord) { _dictionary = fs.readFileSync('dictionary.txt').toString().split('\n'); }
+    if (!customProtoWord) { _dictionary = fs.readFileSync("dictionary.txt").toString().split("\n"); }
     this.protoWord = (customProtoWord || _dictionary[Math.floor(Math.random() * _dictionary.length)]).toLowerCase();
-    this.word = this.protoWord.replace(/[a-z]/g, '*');
+    this.word = this.protoWord.replace(/[a-z]/g, "*");
     this.wordLetters = this.protoWord.split("");
     this.guessedLetters = [];
     this.hp = 10;
@@ -31,7 +31,7 @@ class HangMan {
       } else {
         return "*";
       }
-    }).join('');
+    }).join("");
     return this.word;
   }
 
@@ -40,7 +40,7 @@ class HangMan {
   }
 
   isWin() {
-    return !this.word.split('').includes('*');
+    return !this.word.split("").includes("*");
   }
 }
 
