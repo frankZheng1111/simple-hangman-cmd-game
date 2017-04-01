@@ -8,3 +8,5 @@ log/
 # 编译结果
 build
 
+# 测试覆盖
+coverage/
