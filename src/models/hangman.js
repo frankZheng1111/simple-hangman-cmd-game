@@ -14,7 +14,6 @@ class HangMan {
     this.guessedLetters = [];
     this.hp = config.base.hp;
     logger.info(`Generate a word: ${this.protoWord}`)
- 
   }
 
   guess(letter) {
