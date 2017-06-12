@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 5.0.0
+test:
+  pre:
+    - npm install
+  override:
+    - npm test
+
